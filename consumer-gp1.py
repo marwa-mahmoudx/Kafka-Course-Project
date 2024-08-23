@@ -7,9 +7,8 @@ import sqlite3
 import os  # Added to handle file paths
 from PIL import Image
 #import random  # Added for random object detection logic
-#import torch
-#from ultralytics import YOLO  # Import YOLO
-
+import cv2
+import numpy as np
 
 me = 'marwa-mahmoud'
 groupId = me + 'gp-1'
@@ -48,11 +47,7 @@ def get_db_connection():
     #img = Image.open(image_path)
 
 
-import cv2
-import numpy as np
-
-# Other imports remain the same
-
+# Face or not detection
 def detect_object(image_filename):
     image_path = os.path.join("images", image_filename)
     image = cv2.imread(image_path)
